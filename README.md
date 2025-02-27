@@ -1,22 +1,40 @@
-Here are the step-by-step instructions for running the code:
+Here are the step-by-step instructions
 
-##### 1- Install Ultralytics:
-Open your terminal or command prompt.
-Type the following command and hit Enter:
-<b>pip install ultralytics</b>
+##### 1- For Training : 
+So used Google Colab(T4) to train our Insect Yolo model . Here we researched with various model but we got best result on Yolov8m (Insect-Yolo). In 200 epoch we got the best result. Here we Used 
+Batch size = 16. 
+Learing rate was = 1e-2
+Optimizer = AdamW
+Pool = Max
+Momentum = 0.937
 
-##### 2- Install Flask:
-While still in the terminal or command prompt, type:
-<b>pip install Flask </b>
+We from here we got our best.pt file as our trained file. 
 
-##### 3- Navigate to the Code Directory:
-Use the cd command to navigate to the directory where your code is located. For example:
-<b>cd path/to/your/code/directory </b>
 
-#### 4- Download yolov8m weights:
+##### 2 - Real-Time System :
+We build a real-time system for our research to implement our best.pt (our trained model). 
+
+##### 2.1 - Backend :
+To developed backend of our real-time system we utilized Flask 3.1.0 . All about of backend is code is displayed in app.py in the folder structure. 
+
+
+##### 3 - Frontend : 
+To depeloped our real-time system's frontend we used html and for desining our website we used tailwind css. We used a background image here. 
+![Insect-Detection](static/background3.jpg)
+
+
+##### 4 - Predicted Output Using Our Real-time System : 
+![Insect-Detection](Predicted_images/output1.jpg)
+![Insect-Detection](Predicted_images/output3.jpg)
+![Insect-Detection](Predicted_images/output4.jpg)
+![Insect-Detection](Predicted_images/output5.jpg)
+![Insect-Detection](Predicted_images/output6.jpg)
+
+
+#### Download yolov8m weights:
 Download yolov8m weigths and place in your Flask app code directory.
 
-#### 5- Run the Python Script:
+####  Run the Python Script:
 Once you're in the directory containing your app.py file, run the following command:
 <b>python app.py </b>
 
