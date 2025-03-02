@@ -33,9 +33,10 @@ We save all of our prediction screen shot of our real-time systems in Predicted_
 
 
 ##### 5 - Detecting Non Insect Using Our Real-time System : 
-We also check our model perfomance using no insect image. And our model can detect the no insect and it display a message to input valid insect image. 
+We also check our model perfomance using image that do not contains insect.
+ And our model can detect the image that don't contains any insect  and it display a message to input valid insect image. 
 ![Insect-Detection](Not-insect-images/notinsect-1.png)
-![Insect-Detection](Not-insect-images/notinsect-2.png)
+![Insect-Detection](Not-insect-images/notinsect-2.png) 
 
 #### Download yolov8m weights:
 Download yolov8m weigths and place in your Flask app code directory.
