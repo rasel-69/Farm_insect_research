@@ -24,12 +24,18 @@ To depeloped our real-time system's frontend we used html and for desining our w
 
 
 ##### 4 - Predicted Output Using Our Real-time System : 
+We save all of our prediction screen shot of our real-time systems in Predicted_images folder.
 ![Insect-Detection](Predicted_images/output1.jpg)
 ![Insect-Detection](Predicted_images/output3.jpg)
 ![Insect-Detection](Predicted_images/output4.jpg)
 ![Insect-Detection](Predicted_images/output5.jpg)
 ![Insect-Detection](Predicted_images/output6.jpg)
 
+
+##### 5 - Detecting Non Insect Using Our Real-time System : 
+We also check our model perfomance using no insect image. And our model can detect the no insect and it display a message to input valid insect image. 
+![Insect-Detection](Not-insect-images/notinsect-1.png)
+![Insect-Detection](Not-insect-images/notinsect-2.png)
 
 #### Download yolov8m weights:
 Download yolov8m weigths and place in your Flask app code directory.

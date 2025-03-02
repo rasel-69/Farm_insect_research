@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
 import os
-import torch
 from ultralytics import YOLO
 
 app = Flask(__name__)
@@ -17,17 +16,22 @@ model = YOLO("best.pt")
 def predict_image(image_path):
     results = model(image_path)
     detections = results[0].boxes.data  # Bounding box data
-    classes = results[0].names  # Class names
     
+    # If no insects are detected, return message
+    if len(detections) == 0:
+        return {"message": "No insect detected. Please upload a valid insect image."}
+
+    classes = results[0].names  # Class names
     detected_results = []
+
     for det in detections:
         confidence = float(det[4])  # Confidence score
         class_id = int(det[5])  # Class ID from model output
         disease_name = classes[class_id]
-        
+
         detected_results.append({"disease": disease_name, "confidence": confidence})
 
-    return detected_results
+    return {"predictions": detected_results}
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -45,8 +49,13 @@ def index():
             file.save(file_path)
 
             # Run YOLO prediction
-            predictions = predict_image(file_path)
-            return render_template("index.html", image=file_path, predictions=predictions)
+            results = predict_image(file_path)
+
+            # If no insect is detected, show message
+            if "message" in results:
+                return render_template("index.html",image1=file_path, message=results["message"])
+
+            return render_template("index.html", image=file_path, predictions=results["predictions"])
 
     return render_template("index.html")
 

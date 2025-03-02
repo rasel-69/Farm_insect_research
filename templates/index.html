@@ -11,12 +11,10 @@
 
 <body class="bg-[url('/static/background3.jpg')] bg-cover bg-center">
 
-
     <!-- Include Navbar -->
     {% include 'Navbar.html' %}
 
     <div class=" flex justify-center items-center h-max  mt-10">
-
 
         <div class="bg-white shadow-lg rounded-lg p-6 w-full w-max text-center">
             <h2 class="text-2xl font-bold text-gray-700">Farm Insects Detection</h2>
@@ -62,14 +60,21 @@
                     </ul>
                 </div>
 
-
             </div>
 
+
+            
 
             {% endif %}
 
             {% if message %}
-            <p class="mt-4 text-red-500">{{ message }}</p>
+            <div id="uploadedImage" class="mt-6 mr-5">
+                    <h3 class="text-lg font-semibold text-gray-700">Uploaded Image:</h3>
+                    <div class="mt-4">
+                        <img src="{{ image1 }}" alt="Uploaded Image" class="w-64 mx-auto rounded-lg border">
+                    </div>
+                </div>
+            <p class="mt-4 text-red-500 font-bold">{{ message }}</p>
             {% endif %}
         </div>
     </div>
@@ -97,3 +102,4 @@
 </body>
 
 </html>
+
