@@ -1,7 +1,7 @@
 Here are the step-by-step instructions
 
 ##### 1- For Training : 
-So used Google Colab(T4) to train our Insect Yolo model . Here we researched with various model but we got best result on Yolov8m (Insect-Yolo). In 200 epoch we got the best result. Here we Used 
+So used Google Colab(T4) to train our Insect Yolo model . Here we researched with various model but we got best result on Yolov8m (Yolo-Insect8m). In 200 epoch we got the best result. Here we Used 
 Batch size = 16. 
 Learing rate was = 1e-2
 Optimizer = AdamW
